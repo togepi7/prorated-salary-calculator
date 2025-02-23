@@ -10,6 +10,7 @@ function App() {
         <span className="red-text">Salary</span> Calculator
       </h1>
       <CalendarSalaryCalculator />
+      <Analytics />
     </div>
   );
 }
