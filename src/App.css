@@ -1,0 +1,241 @@
+/* Global reset for consistent box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* App.css */
+
+/* Header styling for a professional look */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.red-text {
+  color: red;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #ccc;
+  margin: 0;
+}
+
+/****/
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Main container with symmetric side padding */
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem; /* Top/Bottom: 2rem, Left/Right: 1rem */
+}
+
+/* Left and Right Panels */
+.left-panel,
+.right-panel {
+  flex: 1;
+  min-width: 320px;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #444;
+  background-color: #2a2a2a;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #03a9f4;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0288d1;
+}
+
+/* React Calendar Overrides */
+.react-calendar {
+  width: 100%;
+  max-width: 400px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.react-calendar__navigation {
+  background-color: #333;
+  border-radius: 8px 8px 0 0;
+  padding: 0.5rem;
+}
+.react-calendar__navigation button {
+  color: #fff;
+  background: transparent;
+  min-width: 44px;
+  margin: 2px;
+}
+.react-calendar__navigation button:hover {
+  background-color: #444;
+}
+/* Hide neighboring month days */
+.react-calendar__month-view__days__day--neighboringMonth {
+  visibility: hidden;
+}
+/* Weekday labels */
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  background-color: #333;
+  border-radius: 0 0 8px 8px;
+}
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.75rem;
+}
+/* Day tiles */
+.react-calendar__tile {
+  background: transparent;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  margin: 2px;
+  transition: background 0.3s ease;
+}
+.react-calendar__tile--now {
+  background-color: rgba(3,169,244,0.2);
+}
+.react-calendar__tile--active,
+.react-calendar__tile:enabled:hover {
+  background-color: #444;
+}
+/* Leave indicator */
+.tile-leave-indicator {
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+/* Modal Overlay (centered) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.modal-content h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.modal-actions button {
+  width: 48%;
+}
+.cancel-btn {
+  background-color: #555;
+}
+.cancel-btn:hover {
+  background-color: #777;
+}
+
+/* RESPONSIVE LAYOUT ADJUSTMENTS */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;  /* Ensure equal left/right padding */
+  }
+  .left-panel, .right-panel {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .left-panel, .right-panel {
+    padding: 1rem;
+  }
+  .react-calendar {
+    max-width: 100%;
+  }
+}
+.red-text {
+  color: red;
+}
